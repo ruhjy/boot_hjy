@@ -83,5 +83,28 @@ public class Controller07 {
 		o1.setAge(40);
 		model.addAttribute("player", o1);
 	}
-
+	
+	// method9 작성
+	// Dto02 클래스 작성
+	
+	// 경로 : /sub7/link9 로 요청오면
+	// Dto02 객체 만들어서 model에 attribute로 추가
+	// view : /sub7/link9로 포워드
+	@RequestMapping("/link9")
+	public void method9(Model model) {
+		Dto02 o1 = new Dto02();
+		o1.setModel("노트북");
+		o1.setPrice(100);
+		o1.setCompany("LG");
+		model.addAttribute("value", o1);
+	}
+	
+	@RequestMapping("/link10")
+	public void method10(Model model) {
+		Dto04 obj = new Dto04();
+		obj.setName("송태섭");
+		obj.setAge(20);
+		model.addAttribute("value", obj);
+	}
+	
 }
