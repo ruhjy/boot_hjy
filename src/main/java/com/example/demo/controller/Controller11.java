@@ -8,9 +8,6 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
-import lombok.extern.slf4j.*;
-
-@Slf4j
 @Controller
 @RequestMapping("/sub11")
 public class Controller11 {
@@ -161,5 +158,4 @@ public class Controller11 {
 
 		model.addAttribute("names", list);
 	}
-
 }
