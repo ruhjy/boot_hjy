@@ -19,3 +19,13 @@ select CategoryID, MAX(Price) from Products group by CategoryID;
 select CategoryID, MIN(Price) from Products group by CategoryID;
 -- 상품 가격의 평균이 가장 높은 카테고리 조회
 select CategoryID, AVG(Price) from Products group by CategoryID order by AVG(Price) desc limit 0, 1;
+
+-- 여러 컬럼으로 그룹
+select * from Customers;
+select COUNT(CustomerID) from Customers;
+select Country, COUNT(CustomerID) from Customers group by Country;
+select Country, City, COUNT(CustomerID) from Customers group by Country, City;
+
+-- 나라별, 도시별 공급자 수 조회
+select * from Suppliers;
+select Country, City, COUNT(SupplierID) from Suppliers group by Country, City;
