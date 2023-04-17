@@ -40,4 +40,3 @@ select substring(CustomerName, 1, 3) from Customers;
 
 -- 고객테이블에서 고객명, 나라이름(앞3글자만) 조회
 select CustomerName, substring(Country, 1, 3) as Country from Customers;
-
