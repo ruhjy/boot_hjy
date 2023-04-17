@@ -28,3 +28,16 @@ Price as dollor, Price * 1300 as won
 from Products where Price >= 100000 / 1300;
 
 select *, Price * 1300 as won from Products where Price >= 100000 / 1300;
+
+-- 부분 문자열 : substring
+-- 첫번째 파라미터 : 원본문자열
+-- 두번째 파라미터 : 시작 인덱스
+-- 세번째 파라미터 : 길이
+select substring('hello world', 3, 3); -- 인덱스 1부터 시작 'llo'
+
+select CustomerName from Customers;
+select substring(CustomerName, 1, 3) from Customers;
+
+-- 고객테이블에서 고객명, 나라이름(앞3글자만) 조회
+select CustomerName, substring(Country, 1, 3) as Country from Customers;
+
