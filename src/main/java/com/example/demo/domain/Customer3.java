@@ -6,5 +6,6 @@ import lombok.*;
 public class Customer3 {
 	private int id;
 	private String name;
+	private String ContactName;
 	private String address;
 }
