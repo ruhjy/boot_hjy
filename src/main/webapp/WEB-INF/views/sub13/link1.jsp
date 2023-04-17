@@ -13,12 +13,28 @@
 	<h1>sub13/link1.jsp 입니다.</h1>
 	
 	<h1>고객 목록</h1>
-	<ul>
-		<c:forEach items="${customerList}" var="customer">
-			<li>${customer.id } : ${customer.name }</li>
-		</c:forEach>
-	</ul>
-	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>ID</th>
+				<th>CustomerName</th>
+				<th>ContactName</th>
+				<th>Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${customerList }" var="customer" varStatus="status">
+			 	<tr>
+					<td>${status.count}</td>
+					<td>${customer.id }</td>
+					<td>${customer.name }</td>
+					<td>${customer.contactName }</td>
+					<td>${customer.address }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
