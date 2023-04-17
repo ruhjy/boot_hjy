@@ -14,7 +14,6 @@ import lombok.extern.slf4j.*;
 @Repository
 public class RepositoryTest {
 
-	
 	@Value("${spring.datasource.url}")
 	private String url;
 	@Value("${spring.datasource.username}")
@@ -40,7 +39,7 @@ public class RepositoryTest {
 				customer.setAddress(rs.getString("Address"));
 				list.add(customer);
 			}
-			
+
 		} catch (SQLException e) {
 			log.error("db error", e);
 		}
@@ -68,11 +67,18 @@ public class RepositoryTest {
 				customer.setAddress(rs.getString("Address"));
 				list.add(customer);
 			}
-			
+
 		} catch (SQLException e) {
 			log.error("db error", e);
 		}
 		return list;
+	}
+
+	public void test123() {
+		String sql = "select Country, City, COUNT(SupplierID) from Suppliers group by Country, City";
+
+		
+		
 	}
 
 }
