@@ -18,3 +18,18 @@ delete from Products where ProductID = 78;
 -- 79번 상품 지우기
 select * from Products where ProductID = 79;
 delete from Products where ProductID = 79;
+
+select * from Products where CategoryID = 1;
+
+delete from Products where CategoryID = 1;
+
+select * from Products;
+delete from Products;
+
+select * from Customers;
+-- 문제1) 고객테이블에서 USA에 사는 고객들 지우기
+select * from Customers where Country = 'USA';
+delete from Customers where Country = 'USA';
+-- 문제2) 모든 직원 지우기
+select * from Employees;
+delete from Employees;
