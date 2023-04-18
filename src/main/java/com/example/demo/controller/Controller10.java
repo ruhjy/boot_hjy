@@ -20,7 +20,7 @@ public class Controller10 {
 	}
 	
 	@RequestMapping("/link2")
-	// @ModelAttribute Dtoo4 dto == Dto04 dto // @ModelAttribute 생략 가능
+	// @ModelAttribute Dto4 dto == Dto04 dto // @ModelAttribute 생략 가능
 	public void method2(@ModelAttribute Dto04 dto) {
 //		Dto04 dto = new Dto04();
 //		dto.setName(request.getParameter("name"));
