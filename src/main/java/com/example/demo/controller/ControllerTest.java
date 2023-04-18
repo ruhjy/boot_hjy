@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.domain.*;
 import com.example.demo.repository.*;
+import com.example.demo.repository.RepositoryTest.*;
 
 @Controller
 public class ControllerTest {
@@ -35,6 +36,27 @@ public class ControllerTest {
 		model.addAttribute("customers", list);
 
 		return "sub13/test";
+	}
+	
+	@GetMapping("/test123")
+	public String test12(Model model) {
+		List<Test1> tests = repository.test123();
+		model.addAttribute("tests", tests);
+		return "sub13/test123";
+	}
+	
+	@GetMapping("/testSuppliers")
+	public String Suppliers(Model model) {
+		List<Supplier> suppliers = repository.findAllSuppliers();
+		model.addAttribute("suppliers", suppliers);
+		return "suppliers/suppliers";
+	}
+	
+	@PostMapping("/testSuppliers")
+	public String saveSuppliers(@ModelAttribute Supplier supplier) {
+		repository.supplierSave(supplier);
+		
+		return "";
 	}
 	
 }
