@@ -16,4 +16,4 @@ select * from MyTable01;
 -- desc : 테이블 구조 보기
 desc MyTable01;
 insert into MyTable01(Col1, Col2) values (30, '가나다');
-insert into MyTable01(Col1, Col2) values ('삼십', '가나다'); -- error
+insert into MyTable01(Col1, Col2) values ('삼십', '가나다'); -- xxx
