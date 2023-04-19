@@ -75,3 +75,76 @@ desc MyTable07;
 select * from MyTable07;
 
 -- 날짜시간
+-- DATE 날짜 (YYYY-MM-DD)
+-- DATETIME 날짜시간 (YYYY-MM-DD hh:mm:ss)
+create table MyTable08 (
+	Col1 date,
+    Col2 datetime
+);
+desc MyTable08;
+insert into MyTable08(Col1) values ('2023-04-19');
+insert into MyTable08(Col1) values ('9999-12-31'); -- 최대
+insert into MyTable08(Col1) values ('1000-01-01'); -- 최소
+
+select * from MyTable08;
+
+insert into MyTable08(Col2) values ('2023-04-19 11:41:50');
+insert into MyTable08(Col2) values ('2023-04-19 23:42:10');
+insert into MyTable08(Col2) values ('9999-12-31 23:59:59'); -- 최대
+insert into MyTable08(Col2) values ('1000-01-01 00:00:00'); -- 최소
+
+select now(); -- 현재 datetime
+
+insert into MyTable08(Col1, Col2) values (now(), now());
+
+select * from MyTable08;
+
+-- 예제) MyTable09 (학생 정보)
+-- 학생이름, 성별, 생년월일, 기타정보, 시험성적 ...
+create table MyTable09 (
+	Name varchar(20),
+    Gender varchar(1),
+    BirthDate date,
+    Score dec(5, 2),
+    Extra varchar(1000)
+);
+desc MyTable09;
+insert into MyTable09(Name, Gender, BirthDate, Score, Extra)
+values
+	('손흥민', '남', '2000-02-02', 99.99, '축구선수'),
+    ('김연아', '여', '2002-02-02', 100, '피겨선수');
+select * from MyTable09;
+
+-- 연습) 내가 가지고 있는 교재정보 저장 MyTable10
+create table MyTable10 (
+	BookName varchar(255),
+    Author varchar(100),
+    Price int,
+    Quantity int,
+    PublicationDate date
+);
+insert into MyTable10(BookName, Author, Price, Quantity, PublicationDate)
+values
+	('코드로 배우는 스프링 웹 프로젝트(개정판)', '구멍가게 코딩단', 38000, 1, '2018-09-13'); 
+
+select * from MyTable10;
+
+-- 연습) 내가 가지고 있는 교재정보 저장 MyTable11
+-- 책제목, 저자, 출판사, 출판일, 가격, 기타
+create table MyTable11 (
+	Title varchar(100),
+    Writer varchar(20),
+    Publisher varchar(50),
+    Published date,
+    Price int,
+    Extra varchar(1000)
+);
+desc MyTable11;
+insert into MyTable11(Title, Writer, Publisher, Published, Price, Extra)
+values
+	('이것이 자바다', '신용권', '한빛', '2022-01-01', 30000, '평점 좋음');
+select Title, Writer, Publisher as '출판사', Published as '출판일', Price, Extra from MyTable11;
+
+update MyTable11 set
+Price = 35000
+where Title = '이것이 자바다';
