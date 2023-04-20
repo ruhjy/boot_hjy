@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>${customer.id }번 고객 수정</h1>
-	<form action="/sub17/link6" method="post">
+	<form action method="post">
 		<input type="hidden" name="id" value="${customer.id }" />
 		<br />
 		이름<input type="text" name="name" value="${customer.name }" />
