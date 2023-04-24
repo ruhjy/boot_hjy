@@ -93,3 +93,6 @@ from Customers where CustomerID = 9;
 select * from Employees;
 desc Employees;
 
+select * from Customers;
+select * from Products join Suppliers on Suppliers.SupplierID = Products.ProductID;
+select * from Suppliers;
