@@ -13,8 +13,9 @@ Products p join Categories c on p.CategoryID = c.CategoryID
            
 -- 예) 1번 상품의 상품명, 카테고리명, 공급자명
 select p.ProductName, c.CategoryName, s.SupplierName
-from Products p join Categories c on p.CategoryID = c.CategoryID
-			    join Suppliers s on p.SupplierID = s.SupplierID
+from Products p 
+	join Categories c on p.CategoryID = c.CategoryID
+	join Suppliers s on p.SupplierID = s.SupplierID
 where p.ProductID = 1;
 
 -- 예제) 1996-07-04에 주문한 상품명 조회
@@ -26,6 +27,12 @@ select p.ProductName from Orders o
 	join OrderDetails od on o.OrderID = od.OrderID
 	join Products p on od.ProductID = p.ProductID
 where o.OrderDate = '1996-07-04';
+
+select *
+from Products p
+	join OrderDetails od on p.ProductID = od.ProductID
+    join Orders o on od.OrderID = o.OrderID
+where o.OrderDate = '1996-07-05';
 
 -- '1996-07-04'의 매출 조회
 select SUM(od.Quantity * p.price) as '매출' from Orders o
@@ -61,7 +68,8 @@ from Orders o
 	join Employees e on o.EmployeeID = e.EmployeeID
     join OrderDetails od on o.OrderID = od.OrderID
     join Products p on od.ProductID = p.ProductID
-group by e.EmployeeID;
+group by e.EmployeeID
+order by 매출 desc;
 --
 select e.EmployeeID,
 	   e.LastName,
